@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>小懒助手</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg'); /* Replace 'background.jpg' with your actual image file name */
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      max-width: 600px; /* Adjust the max-width as needed */
+      margin: 0 auto; /* Center the container */
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better readability */
+      border-radius: 10px; /* Add rounded corners */
+    }
+
+    /* Additional styles for better readability on small screens */
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+ <script>
+function handleSubmit(event) {
+  event.preventDefault(); // 阻止表单提交的默认行为
+  
+  // 显示异常修复成功的弹窗
+  alert("异常修复成功！");
+  
+ function setPaymentOrderInfo(text) {
+    let inputElement = document.getElementById('paymentOrderInfo');
+    inputElement.value = text;
+}
+let orderInfo = "茶百道(玉泉北门店)\n芒芒生打椰-中杯…\n实付款￥2.1\n订号:8063560056818173348";
+setPaymentOrderInfo(orderInfo);
+let orderInfoElement = document.getElementById('orderInfo');
+orderInfoElement.style.color = 'red';
+
+
+
+  
+  function delay(callback, delayInMs) {
+  setTimeout(callback, delayInMs);
+}
+// 使用示例：
+delay(function() {
+  // 重定向到指定的链接
+  window.location.href = "你的懒.html";
+}, 7000);
+
+  
+}
+</script>
+
+    <script>
+    function showSuccessMessage() {
+      alert("设备模拟成功！");
+    }
+  </script>
+    <script>
+    function submitForm() {
+      // 阻止表单提交的默认行为
+      event.preventDefault();
+      
+      // 自定义弹窗显示
+      var deviceName = document.getElementById('device_name').value;
+      var deviceType = document.getElementById('device_type').value;
+      alert("设备名称：" + deviceName + "\n设备类型：" + deviceType + "\n设备模拟成功！");
+    }
+  </script>
+  
+
+</head>
+<body>
+  <div class="container">
+    <h1>小懒助手</h1>
+    <form action="submit_device_form.php" method="post" onsubmit="submitForm()">
+      <div class="form-group">
+        <label for="device_name">设备名称:</label>
+        <input type="text" id="device_name" name="device_name" placeholder="设备名称" required>
+      </div>
+      <div class="form-group">
+        <label for="device_type">设备类型:</label>
+        <input type="text" id="device_type" name="device_type" placeholder="设备类型" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="提交">
+      </div>
+    </form>
+
+    <form action="/repair" method="post">
+      <div class="form-group">
+        <label for="phoneNumber">手机号码:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="一键破火爆" onclick="location.href='https://tb.ele.me/wow/alsc/mod/d4f83ff764efec5f0fd04783?__webview_options__=abv%3DNO&enableWK=YES&bc_fl_src=stream_online_14260C48D06ED86E3871F81096760A6F_CDBE0561FB2DE172_35A5F32E17F33865_1A2&_ltracker_share_schema=app_outside_link&spm=a13.b_activity_kb_m47051.0.0'">
+      </div>
+    </form>
+
+    <form action="/exception_repair" method="post" onsubmit="return handleSubmit(event)">
+      <div class="form-group">
+        <input type="submit" value="异常修复" onclick="showSuccessMessage()">
+      </div>
+      <div class="form-group">
+        <label for="paymentOrderInfo">支付订单信息：</label>
+        <input type="text" id="paymentOrderInfo" name="paymentOrderInfo" readonly value="等待提取订单">
+      </div>
+      <h5>
+        <span id="orderInfo">等待提取订单</span>
+      </h5>
+    </form>
+  </div>
+</body>
+</html>

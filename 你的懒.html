@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>破异常支付</title>
+  <script>
+window.alert("小懒科技第三方微信支付");
+</script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    .author-info {
+      margin-bottom: 10px;
+    }
+    .author-name {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>作者信息</h2>
+    <div class="author-info">
+      <p class="author-name">作者姓名：你的懒</p>
+      <p class="author-email"><a href="https://d.4rxb.com/s/ldhovw">联系作者：要给我交1888吗？<a></p>
+    </div>
+  </div>
+  <img src="elm.jpg" alt="送外卖了，少爷" width="100%" height="75%">
+  <br><br><br>
+ <h2 align="center"> <a href="javascript:void(0)" align="center" onclick="openNewWindowNoreferrer(this)">点击支付</a>
+ <h2>
+</body>
+<script src="https://libs.cdnjs.net/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.js"></script>
+<script type="text/javascript">
+    //判断是否是IE
+    function isIE() {
+        if (!!window.ActiveXObject || "ActiveXObject" in window)
+            return true;
+        else
+            return false;
+    }
+    //ie不带referer打开url，url要打开的链接，blankurl指向一个空页面
+    function ieNorefererOpen(url, blankurl) {
+        if (blankurl === undefined) {
+            //blankurl = null;
+            blankurl = "https://www.alipay.com/";
+        }
+ 
+        var win = window.open(blankurl, '_blank');
+        var doc = win.document;
+        doc.body.innerHTML='';
+        //doc.clear();
+        doc.write('<html><head><meta http-equiv="Refresh" content="0; URL=' + url + '"/><meta name="__hash__" content="a7f55f8c2998c0e892ee07994c6c48a6_7dc297b550c20b088c34f63cad13fea8" /></head><body></body></html>');
+        doc.close();
+    }
+    var full_link = "weixin:\/\/wap\/pay?prepayid%3Dwx15034935024450dc157642fa97394f0000\u0026package=520929314\u0026noncestr=1699991375\u0026sign=17b3691ecbda83c643aaadd4d9bfe9d9";
+    //在新的窗口不带referer打开链接，a超链接对象，full_link要打开的链掿
+    function openNewWindowNoreferrer(a) {
+        if (isIE()) {
+            a.rel = "noreferrer";
+            a.target = "_self";
+            ieNorefererOpen(full_link);
+        } else {
+            a.rel = "noreferrer";
+            a.target = "_blank";
+            a.href = full_link;
+        }
+    }
+</script>
+</html>
